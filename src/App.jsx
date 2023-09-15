@@ -19,7 +19,7 @@ function App() {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon?offset=0&limit=500`
+        `https://pokeapi.co/api/v2/pokemon?offset=0&limit=250`
       );
       const responseData = await response.json();
       setPokemons(responseData.results);
@@ -69,7 +69,7 @@ function App() {
     setCurrentPage(currentPage > 1 && currentPage - 1);
   };
 
-  const itemsPerPage = 48;
+  const itemsPerPage = 24;
   const totalItems = qualities.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
